@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trishastik Technology — Growth Analysis 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #020c1b;
+    --surface:   #0b1628;
+    --surface2:  #0f1e35;
+    --border:    rgba(255,255,255,0.07);
+    --cyan:      #00c8e0;
+    --cyan-dim:  rgba(0,200,224,0.10);
+    --orange:    #f97316;
+    --orange-dim:rgba(249,115,22,0.10);
+    --green:     #34d399;
+    --green-dim: rgba(52,211,153,0.10);
+    --red:       #f43f5e;
+    --text:      #e2e8f0;
+    --muted:     #64748b;
+    --muted2:    #94a3b8;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ── HERO ────────────────────────────────── */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,200,224,0.25);
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 5.5vw, 64px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 .c { color: var(--cyan); }
+  .hero h1 .o { color: var(--orange); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--muted2);
+    max-width: 540px;
+    line-height: 1.7;
+  }
+
+  /* ── SECTION HEADERS ─────────────────────── */
+  .sec {
+    padding: 56px 0 0;
+  }
+
+  .sec-eye {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .sec-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  /* ── STAT CARDS ──────────────────────────── */
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+
+  .card-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .card-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .card-note {
+    font-size: 12px;
+    color: var(--muted2);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .card.cyan  { border-color: rgba(0,200,224,0.30); background: var(--cyan-dim); }
+  .card.orange{ border-color: rgba(249,115,22,0.30); background: var(--orange-dim); }
+  .card.green { border-color: rgba(52,211,153,0.30); background: var(--green-dim); }
+  .card.red   { border-color: rgba(244,63,94,0.30);  background: rgba(244,63,94,0.08); }
+
+  /* ── REVENUE GAP — SIGNATURE ─────────────── */
+  .gap-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin-top: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gap-block::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--cyan));
+  }
+
+  .gap-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .gap-head h3 {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .gap-head p {
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 340px;
+  }
+
+  .gap-rows { display: flex; flex-direction: column; gap: 14px; }
+
+  .gap-row {
+    display: grid;
+    grid-template-columns: 130px 1fr 110px;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .gap-mkt {
+    font-size: 12px;
+    color: var(--muted2);
+    text-align: right;
+    line-height: 1.3;
+  }
+
+  .gap-bar-wrap {
+    height: 40px;
+    background: var(--surface2);
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
+  .gap-bar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    border-radius: 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .bar-now   { width: 9%;  background: rgba(100,116,139,0.35); color: var(--muted2); }
+  .bar-ind   { width: 28%; background: rgba(0,200,224,0.25);   color: var(--cyan); }
+  .bar-uk    { width: 55%; background: rgba(0,200,224,0.4);    color: var(--cyan); }
+  .bar-us    { width: 100%; background: linear-gradient(90deg, var(--cyan), #0891b2); color: var(--bg); }
+
+  .gap-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .gap-note {
+    margin-top: 24px;
+    padding: 16px;
+    background: var(--orange-dim);
+    border: 1px solid rgba(249,115,22,0.25);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--muted2);
+  }
+
+  .gap-note strong { color: var(--orange); }
+
+  /* ── PROBLEMS ────────────────────────────── */
+  .problem-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .prob {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    align-items: start;
+    gap: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .prob-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: rgba(244,63,94,0.12);
+    border: 1px solid rgba(244,63,94,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  .prob-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .prob-desc {
+    font-size: 13px;
+    color: var(--muted2);
+    line-height: 1.5;
+  }
+
+  .prob-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--red);
+    background: rgba(244,63,94,0.1);
+    border: 1px solid rgba(244,63,94,0.2);
+    border-radius: 4px;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── GROWTH VECTORS ──────────────────────── */
+  .vectors { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+
+  .vec {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+    display: grid;
+    grid-template-columns: 56px 1fr 120px;
+    gap: 24px;
+    align-items: start;
+    transition: border-color 0.2s;
+  }
+
+  .vec:hover { border-color: rgba(0,200,224,0.3); }
+
+  .vec-n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--surface2);
+    line-height: 1;
+    user-select: none;
+  }
+
+  .vec-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    background: var(--cyan-dim);
+    border: 1px solid rgba(0,200,224,0.2);
+    border-radius: 3px;
+    padding: 2px 7px;
+    margin-bottom: 8px;
+  }
+
+  .vec-title {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+
+  .vec-desc {
+    font-size: 13px;
+    color: var(--muted2);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .vec-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .vec-steps li {
+    font-size: 13px;
+    color: var(--muted2);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+  }
+
+  .vec-steps li::before {
+    content: '→';
+    color: var(--cyan);
+    flex-shrink: 0;
+    font-weight: 600;
+  }
+
+  .vec-impact { text-align: center; }
+
+  .impact-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .impact-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--green);
+    line-height: 1.3;
+  }
+
+  /* ── REVENUE CHART ───────────────────────── */
+  .chart-wrap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin-top: 28px;
+  }
+
+  .chart-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .leg {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted2);
+  }
+
+  .leg-dot {
+    width: 12px; height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .leg-dot.curr { background: rgba(100,116,139,0.5); }
+  .leg-dot.grow { background: var(--cyan); }
+
+  .chart-area {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    margin-bottom: 8px;
+  }
+
+  .chart-col {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    height: 100%;
+  }
+
+  .cbar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    max-width: 22px;
+  }
+
+  .cbar.c { background: rgba(100,116,139,0.35); }
+  .cbar.g { background: linear-gradient(180deg, var(--cyan), #0891b2); }
+
+  .chart-xlabels {
+    display: flex;
+    gap: 6px;
+  }
+
+  .xlabel {
+    flex: 1;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    padding-top: 8px;
+  }
+
+  .chart-target {
+    margin-top: 24px;
+    padding: 16px 20px;
+    background: var(--green-dim);
+    border: 1px solid rgba(52,211,153,0.25);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .chart-target p { font-size: 13px; color: var(--muted2); }
+  .chart-target strong { color: var(--green); }
+
+  .target-big {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .target-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── ROADMAP ─────────────────────────────── */
+  .roadmap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 28px;
+    position: relative;
+  }
+
+  .roadmap::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 20px;
+    right: 20px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .q {
+    padding: 0 16px;
+    position: relative;
+  }
+
+  .q:first-child { padding-left: 0; }
+  .q:last-child  { padding-right: 0; }
+
+  .q-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--cyan);
+    border: 3px solid var(--bg);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 18px;
+    box-shadow: 0 0 0 4px var(--cyan-dim);
+  }
+
+  .q-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 4px;
+  }
+
+  .q-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .q-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .q-items li {
+    font-size: 12px;
+    color: var(--muted2);
+    line-height: 1.4;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .q-items li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--cyan);
+    font-weight: 700;
+  }
+
+  .q-rev {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .q-rev span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ── MARKET TABLE ────────────────────────── */
+  .mkt-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .mkt-table th {
+    text-align: left;
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mkt-table td {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted2);
+    vertical-align: top;
+  }
+
+  .mkt-table td:first-child {
+    color: var(--text);
+    font-weight: 600;
+    width: 200px;
+  }
+
+  .mkt-table td.big {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cyan);
+  }
+
+  .mkt-table td.cagr {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  /* ── KPIs ────────────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .kpi {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+  }
+
+  .kpi-name {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 14px;
+  }
+
+  .kpi-now {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    color: var(--muted);
+    text-decoration: line-through;
+    margin-bottom: 4px;
+  }
+
+  .kpi-arrow {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .kpi-target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .kpi-when {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── FOOTER ──────────────────────────────── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 0;
+    margin-top: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer p {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .footer-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────── */
+  @media (max-width: 700px) {
+    .wrap { padding: 0 20px; }
+    .grid-4 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .vec    { grid-template-columns: 1fr; }
+    .vec-n  { display: none; }
+    .vec-impact { text-align: left; }
+    .roadmap { grid-template-columns: 1fr 1fr; }
+    .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .gap-row { grid-template-columns: 90px 1fr 80px; }
+    .prob { grid-template-columns: 44px 1fr; }
+    .prob-badge { display: none; }
+    .hero h1 { font-size: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="tag">&#9656;&nbsp; Growth Strategy Report &nbsp;·&nbsp; Trishastik Technology &nbsp;·&nbsp; August 2026</div>
+    <h1>The <span class="c">₹1 Crore</span> Roadmap<br>for a <span class="o">₹30K</span> Problem</h1>
+    <p class="hero-sub">
+      Trishastik is operating in a $176B market and sitting on a 4-person team that builds
+      world-class systems. The only thing missing is the right strategy.
+      This is it.
+    </p>
+  </header>
+
+  <!-- ── 01  CURRENT STATE ── -->
+  <section class="sec">
+    <p class="sec-eye">01 — Current State</p>
+    <h2 class="sec-title">Where Trishastik stands today</h2>
+
+    <div class="grid-4">
+      <div class="card">
+        <div class="card-num mono">13+</div>
+        <div class="card-label">Total Clients</div>
+        <div class="card-note">All India-based. Strong early signal of delivery capability.</div>
+      </div>
+      <div class="card orange">
+        <div class="card-num mono" style="color:var(--orange)">₹30K</div>
+        <div class="card-label">Avg Project Value</div>
+        <div class="card-note">Severely underpriced for a 4-person technical team.</div>
+      </div>
+      <div class="card">
+        <div class="card-num mono">₹2L+</div>
+        <div class="card-label">Revenue Generated</div>
+        <div class="card-note">Bootstrapped. No external funding. Clean cap table.</div>
+      </div>
+      <div class="card">
+        <div class="card-num mono">4</div>
+        <div class="card-label">Team Members</div>
+        <div class="card-note">Lean team. Android + Web most in demand right now.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div class="grid-3">
+        <div class="card" style="border-left: 3px solid var(--muted);">
+          <div class="card-label" style="margin-bottom:8px">Client Acquisition</div>
+          <div style="font-size:14px; color:var(--muted2); line-height:1.5">
+            Freelancing platforms (Fiverr/Upwork) + organic website traffic
+          </div>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--muted);">
+          <div class="card-label" style="margin-bottom:8px">Geography</div>
+          <div style="font-size:14px; color:var(--muted2);">India only. Targeting: US, UK, EU, Canada, Australia</div>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--red);">
+          <div class="card-label" style="margin-bottom:8px">Recurring Revenue</div>
+          <div style="font-size:14px; color:var(--red);">₹0 — 100% project-based. Starts from zero every month.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 02  MARKET OPPORTUNITY ── -->
+  <section class="sec">
+    <p class="sec-eye">02 — Market Opportunity</p>
+    <h2 class="sec-title">The market Trishastik is sitting inside</h2>
+
+    <table class="mkt-table">
+      <thead>
+        <tr>
+          <th>Market Segment</th>
+          <th>2025 Size</th>
+          <th>CAGR</th>
+          <th>2034 Projection</th>
+          <th>Trishastik Fit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>India SaaS Market</td>
+          <td class="big">$9.14B</td>
+          <td class="cagr">27.3%</td>
+          <td>$102B by 2035</td>
+          <td>SaaS MVP Development, cloud deployment</td>
+        </tr>
+        <tr>
+          <td>India Healthcare IT</td>
+          <td class="big">$19.36B</td>
+          <td class="cagr">19.7%</td>
+          <td>$112B by 2034</td>
+          <td>Healthcare Tech service line</td>
+        </tr>
+        <tr>
+          <td>India IT Spending</td>
+          <td class="big">$176B</td>
+          <td class="cagr">10.7%</td>
+          <td>Growing</td>
+          <td>All service lines</td>
+        </tr>
+        <tr>
+          <td>India MSME Digitization</td>
+          <td class="big">51.5M MSMEs</td>
+          <td class="cagr">—</td>
+          <td>Only 30–40% digitized</td>
+          <td>Biggest untapped client base</td>
+        </tr>
+        <tr>
+          <td>Tier-2 Tech Startups</td>
+          <td class="big">45%+ DPIIT</td>
+          <td class="cagr">—</td>
+          <td>Recognition growing</td>
+          <td>Patna = lower cost base, less competition</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:16px; padding:16px 20px; background:var(--cyan-dim); border:1px solid rgba(0,200,224,0.2); border-radius:8px; font-size:13px; color:var(--muted2); line-height:1.6;">
+      <strong style="color:var(--cyan)">Bihar Tailwind:</strong>
+      The #ScaleUpBihar initiative connects 1,000+ innovators across all 534 blocks. IIT Patna's incubator (backed by ₹47.10 Cr from GoI + GoB) is actively building the startup ecosystem.
+      Patna is being named in the same breath as Jaipur and Lucknow as the next startup hub. <strong style="color:var(--cyan)">This is the right city, the right time.</strong>
+    </div>
+  </section>
+
+  <!-- ── 03  THE REAL PROBLEM (SIGNATURE) ── -->
+  <section class="sec">
+    <p class="sec-eye">03 — The Revenue Gap</p>
+    <h2 class="sec-title">Same work. Wildly different prices.</h2>
+
+    <div class="gap-block">
+      <div class="gap-head">
+        <div>
+          <h3>What the same Android + Web app earns across markets</h3>
+          <p style="margin-top:6px">This is the single biggest lever Trishastik has. The product is identical. The market is not.</p>
+        </div>
+      </div>
+
+      <div class="gap-rows">
+        <div class="gap-row">
+          <div class="gap-mkt">Current<br><strong style="color:var(--text)">India (platforms)</strong></div>
+          <div class="gap-bar-wrap"><div class="gap-bar bar-now">₹30K</div></div>
+          <div class="gap-val" style="color:var(--muted2)">₹30,000</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-mkt">India<br><strong style="color:var(--text)">Premium Segment</strong></div>
+          <div class="gap-bar-wrap"><div class="gap-bar bar-ind">₹80K–1.2L</div></div>
+          <div class="gap-val" style="color:var(--cyan)">~₹1,00,000</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-mkt">UK / Canada<br><strong style="color:var(--text)">International</strong></div>
+          <div class="gap-bar-wrap"><div class="gap-bar bar-uk">$1,200–$2,500</div></div>
+          <div class="gap-val" style="color:var(--cyan)">~₹1.8L</div>
+        </div>
+        <div class="gap-row">
+          <div class="gap-mkt">US / Australia<br><strong style="color:var(--text)">International</strong></div>
+          <div class="gap-bar-wrap"><div class="gap-bar bar-us">$2,500–$5,000</div></div>
+          <div class="gap-val" style="color:var(--cyan)">~₹3.5L</div>
+        </div>
+      </div>
+
+      <div class="gap-note">
+        <strong>The math:</strong> If Trishastik shifts just <strong>4 projects/month</strong> to international pricing,
+        monthly revenue jumps from <strong>₹1.2L → ₹7–10L</strong> with the same team doing the same work.
+        This is not a product problem. This is a positioning and market problem.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04  CRITICAL GAPS ── -->
+  <section class="sec">
+    <p class="sec-eye">04 — What's Holding Growth Back</p>
+    <h2 class="sec-title">4 problems that must be fixed first</h2>
+
+    <div class="problem-list">
+      <div class="prob">
+        <div class="prob-icon">💸</div>
+        <div>
+          <div class="prob-title">Severe underpricing for a 4-person team</div>
+          <div class="prob-desc">₹30K for an Android + Web app is solo-freelancer pricing.
+            A 4-person team has overhead, coordination cost, and QA. Industry standard for this team size is ₹75K–₹3L per project.
+            Every project at ₹30K leaves ₹45K–₹2.7L on the table.</div>
+        </div>
+        <div class="prob-badge">Critical</div>
+      </div>
+      <div class="prob">
+        <div class="prob-icon">🔄</div>
+        <div>
+          <div class="prob-title">Zero recurring revenue — starts from zero every month</div>
+          <div class="prob-desc">100% project-based revenue means revenue is unpredictable.
+            No AMC contracts, no retainers, no SaaS subscriptions.
+            Every new month requires re-selling from scratch. This is the #1 reason early startups stall.</div>
+        </div>
+        <div class="prob-badge">Critical</div>
+      </div>
+      <div class="prob">
+        <div class="prob-icon">🏷️</div>
+        <div>
+          <div class="prob-title">Freelancing platforms cap growth at commodity pricing</div>
+          <div class="prob-desc">Fiverr/Upwork take 20% commission AND force price competition with developers from Southeast Asia.
+            These platforms are great for first clients, terrible for building a sustainable business.
+            They signal "cheap" to the exact premium clients Trishastik wants.</div>
+        </div>
+        <div class="prob-badge">High</div>
+      </div>
+      <div class="prob">
+        <div class="prob-icon">📡</div>
+        <div>
+          <div class="prob-title">8 service lines for 4 people — too scattered to be known for anything</div>
+          <div class="prob-desc">The website lists Software Dev, SaaS, AI/ML, Cloud, Cybersecurity, Healthcare, Industrial, and Digital Ops.
+            Clients don't hire generalists for premium budgets. They hire specialists.
+            Dominating 1–2 verticals drives 3x higher referral rates and 2x pricing power.</div>
+        </div>
+        <div class="prob-badge">High</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05  GROWTH VECTORS ── -->
+  <section class="sec">
+    <p class="sec-eye">05 — Growth Strategy</p>
+    <h2 class="sec-title">4 vectors to 10× revenue in 12 months</h2>
+
+    <div class="vectors">
+
+      <div class="vec">
+        <div class="vec-n">01</div>
+        <div>
+          <div class="vec-tag">Highest Impact</div>
+          <div class="vec-title">Enter the International Market Immediately</div>
+          <div class="vec-desc">The same React Native + Web app that earns ₹30K from an Indian client earns
+            $1,500–$3,000 (~₹1.3L–₹2.5L) from a UK or US client. This is not a skill gap.
+            It's an audience gap. Trishastik already has the portfolio (Pariksha Sarthi is a complete EdTech ecosystem).
+            The work is done. Now it needs to reach the right people.</div>
+          <ul class="vec-steps">
+            <li>Rebuild LinkedIn profiles as founder-led content engines — post 1 project case study/week with tech stack, problem solved, outcome</li>
+            <li>Move off Fiverr, create Toptal/Contra/Arc.dev profiles — these attract $500–$3K/project clients directly</li>
+            <li>Target US/UK startup founders who need SaaS MVPs ($5K–$20K budget range) — they are actively looking for reliable Indian dev teams</li>
+            <li>One-line positioning: "We build SaaS MVPs for global founders in 8–12 weeks using React, Go, and cloud-native architecture"</li>
+          </ul>
+        </div>
+        <div class="vec-impact">
+          <div class="impact-label">Revenue Impact</div>
+          <div class="impact-val">3–5×<br>per project</div>
+        </div>
+      </div>
+
+      <div class="vec">
+        <div class="vec-n">02</div>
+        <div>
+          <div class="vec-tag">Do This Week</div>
+          <div class="vec-title">Fix Pricing: Launch 3 Clear Service Packages</div>
+          <div class="vec-desc">Stop quoting custom prices for every project. Custom quotes signal uncertainty and invite negotiation downward.
+            Package pricing signals confidence, accelerates decisions, and justifies higher prices.
+            This alone can double average project value within 60 days.</div>
+          <ul class="vec-steps">
+            <li><strong style="color:var(--text)">Starter</strong> — Business website with CMS + lead capture: ₹75,000</li>
+            <li><strong style="color:var(--text)">Business Platform</strong> — Web app + mobile app + admin dashboard: ₹2,00,000</li>
+            <li><strong style="color:var(--text)">SaaS MVP</strong> — Full SaaS product (auth, billing, cloud, API): ₹5,00,000+</li>
+            <li><strong style="color:var(--text)">Healthcare System</strong> — Appointment + patient workflow + dashboard: ₹3,00,000</li>
+            <li>Add AMC (Annual Maintenance Contract) to every package: 20–25% of project value/year</li>
+          </ul>
+        </div>
+        <div class="vec-impact">
+          <div class="impact-label">Revenue Impact</div>
+          <div class="impact-val">+150%<br>avg value</div>
+        </div>
+      </div>
+
+      <div class="vec">
+        <div class="vec-n">03</div>
+        <div>
+          <div class="vec-tag">Month 3–6</div>
+          <div class="vec-title">Build the Recurring Revenue Engine</div>
+          <div class="vec-desc">Currently, 0% of Trishastik's revenue is recurring. This means every month
+            is an existential re-sell. The fix: AMC contracts after every project, a retainer option for ongoing clients,
+            and — in 6–9 months — one own SaaS product.
+            Even 10 AMC clients at ₹10K/month = ₹1L in guaranteed baseline revenue every month.</div>
+          <ul class="vec-steps">
+            <li><strong style="color:var(--text)">Phase 1 — AMC Contracts:</strong> Offer 6-month or 1-year maintenance contracts post every delivery. ₹6,000–₹25,000/month per client depending on project size</li>
+            <li><strong style="color:var(--text)">Phase 2 — Retainers:</strong> For clients with ongoing needs (weekly updates, new features), offer 20-hr/month retainers at ₹30,000/month</li>
+            <li><strong style="color:var(--text)">Phase 3 — Own SaaS product:</strong> Pariksha Sarthi template → license to 10 EdTech startups at ₹15,000/month each. Same codebase, recurring revenue</li>
+            <li>Target: 40% of revenue recurring within 9 months</li>
+          </ul>
+        </div>
+        <div class="vec-impact">
+          <div class="impact-label">Revenue Impact</div>
+          <div class="impact-val">₹1L+/mo<br>predictable</div>
+        </div>
+      </div>
+
+      <div class="vec">
+        <div class="vec-n">04</div>
+        <div>
+          <div class="vec-tag">Positioning</div>
+          <div class="vec-title">Pick 2 Verticals. Own Them Completely.</div>
+          <div class="vec-desc">Trishastik already has the proof: Pariksha Sarthi = EdTech. The Healthcare service line exists.
+            India's Healthcare IT market is $19.36B growing at 19.7% CAGR. EdTech is Kota/Patna's natural territory.
+            Dominating two verticals means better case studies, stronger referrals, faster sales cycles,
+            and premium pricing — because clients will pay more to hire specialists in their domain.</div>
+          <ul class="vec-steps">
+            <li><strong style="color:var(--text)">Vertical 1 — EdTech:</strong> "We built Pariksha Sarthi. We can build your EdTech platform." This is a complete portfolio piece already.</li>
+            <li><strong style="color:var(--text)">Vertical 2 — Healthcare Tech:</strong> Target small/mid clinics in Tier-2 India that need appointment systems, patient records, and billing. ₹1.5L–₹3L per system, AMC ₹12K/month.</li>
+            <li>Create 1 detailed case study for each vertical with problem → solution → tech stack → outcome → screenshots</li>
+            <li>Reference other services ("we also do cloud, cybersecurity") but lead with these two in all marketing</li>
+          </ul>
+        </div>
+        <div class="vec-impact">
+          <div class="impact-label">Revenue Impact</div>
+          <div class="impact-val">2× client<br>retention</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 06  REVENUE PROJECTION ── -->
+  <section class="sec">
+    <p class="sec-eye">06 — Revenue Projection</p>
+    <h2 class="sec-title">Current trajectory vs. growth path</h2>
+
+    <div class="chart-wrap">
+      <div class="chart-legend">
+        <div class="leg"><div class="leg-dot curr"></div> Current trajectory (no change)</div>
+        <div class="leg"><div class="leg-dot grow"></div> Growth path (4 vectors activated)</div>
+      </div>
+
+      <!-- Bars: max = 20L = 180px. Scale: px = value_in_lakhs × 9 -->
+      <div class="chart-area">
+
+        <!-- Q1: Current 1.2L = 11px | Growth 3L = 27px -->
+        <div class="chart-col">
+          <div class="cbar c" style="height:11px"></div>
+          <div class="cbar g" style="height:27px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:11px"></div>
+          <div class="cbar g" style="height:32px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:12px"></div>
+          <div class="cbar g" style="height:41px"></div>
+        </div>
+
+        <!-- Q2: Current 1.4L | Growth 5–6L -->
+        <div class="chart-col">
+          <div class="cbar c" style="height:13px"></div>
+          <div class="cbar g" style="height:50px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:13px"></div>
+          <div class="cbar g" style="height:59px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:14px"></div>
+          <div class="cbar g" style="height:68px"></div>
+        </div>
+
+        <!-- Q3: Current 1.7L | Growth 8–12L -->
+        <div class="chart-col">
+          <div class="cbar c" style="height:15px"></div>
+          <div class="cbar g" style="height:86px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:15px"></div>
+          <div class="cbar g" style="height:104px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:16px"></div>
+          <div class="cbar g" style="height:113px"></div>
+        </div>
+
+        <!-- Q4: Current 2L | Growth 15–20L -->
+        <div class="chart-col">
+          <div class="cbar c" style="height:17px"></div>
+          <div class="cbar g" style="height:126px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:18px"></div>
+          <div class="cbar g" style="height:149px"></div>
+        </div>
+        <div class="chart-col">
+          <div class="cbar c" style="height:18px"></div>
+          <div class="cbar g" style="height:180px"></div>
+        </div>
+      </div>
+
+      <div class="chart-xlabels">
+        <div class="xlabel">M1</div><div class="xlabel">M2</div><div class="xlabel">M3</div>
+        <div class="xlabel">M4</div><div class="xlabel">M5</div><div class="xlabel">M6</div>
+        <div class="xlabel">M7</div><div class="xlabel">M8</div><div class="xlabel">M9</div>
+        <div class="xlabel">M10</div><div class="xlabel">M11</div><div class="xlabel">M12</div>
+      </div>
+
+      <div class="chart-target">
+        <div>
+          <p>Month 12 — Growth Path Target</p>
+          <p style="margin-top:4px; font-size:12px">Pricing reform + 2 intl clients/mo + AMC revenue + vertical niching</p>
+        </div>
+        <div style="text-align:right">
+          <div class="target-big">₹18–20L</div>
+          <div class="target-sub">per month (vs ₹1.5–2L today)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 07  ROADMAP ── -->
+  <section class="sec">
+    <p class="sec-eye">07 — Execution Roadmap</p>
+    <h2 class="sec-title">What happens, quarter by quarter</h2>
+
+    <div class="roadmap">
+      <div class="q">
+        <div class="q-dot"></div>
+        <div class="q-name">Q1 · Month 1–3</div>
+        <div class="q-title">Fix the Foundation</div>
+        <ul class="q-items">
+          <li>Launch 3 service packages with fixed pricing</li>
+          <li>Add AMC clause to all new contracts</li>
+          <li>Move Upwork profile to $25+/hr rate</li>
+          <li>Write Pariksha Sarthi case study</li>
+          <li>2 LinkedIn posts/week (case studies, not fluff)</li>
+          <li>Redesign website with package pricing visible</li>
+        </ul>
+        <div class="q-rev">₹2.5–4L<span>monthly target</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-dot"></div>
+        <div class="q-name">Q2 · Month 4–6</div>
+        <div class="q-title">International Push</div>
+        <ul class="q-items">
+          <li>First 2–3 international clients ($500–$1,500)</li>
+          <li>Apply to Toptal or Arc.dev</li>
+          <li>Direct LinkedIn outreach to US/UK startup founders</li>
+          <li>First 5 clients on AMC contract</li>
+          <li>Hire 1–2 more developers</li>
+          <li>Dominate EdTech positioning publicly</li>
+        </ul>
+        <div class="q-rev">₹5–7L<span>monthly target</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-dot"></div>
+        <div class="q-name">Q3 · Month 7–9</div>
+        <div class="q-title">Vertical Dominance</div>
+        <ul class="q-items">
+          <li>10 clients on AMC = ₹80K–1L/month baseline</li>
+          <li>Target 5 Healthcare clinics with "Clinic Digital System" package</li>
+          <li>First retainer client (20hr/month)</li>
+          <li>SEO targeting: "SaaS MVP developer India"</li>
+          <li>Begin SaaS product scoping (EdTech or Healthcare)</li>
+        </ul>
+        <div class="q-rev">₹8–12L<span>monthly target</span></div>
+      </div>
+
+      <div class="q">
+        <div class="q-dot"></div>
+        <div class="q-name">Q4 · Month 10–12</div>
+        <div class="q-title">Product Launch</div>
+        <ul class="q-items">
+          <li>Launch SaaS product (EdTech/Healthcare)</li>
+          <li>First 10 paying SaaS customers</li>
+          <li>International clients = 40%+ of revenue</li>
+          <li>Recurring = 40%+ of total revenue</li>
+          <li>Team scaled to 8–10 people</li>
+          <li>Explore Bihar Startup Policy funding</li>
+        </ul>
+        <div class="q-rev">₹15–20L<span>monthly target</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 08  KPIs ── -->
+  <section class="sec">
+    <p class="sec-eye">08 — Metrics to Track</p>
+    <h2 class="sec-title">What gets measured, gets improved</h2>
+
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-name">Avg Project Value</div>
+        <div class="kpi-now">₹30,000</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">₹1,50,000</div>
+        <div class="kpi-when">By Month 6</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-name">Monthly Revenue</div>
+        <div class="kpi-now">₹1–2L</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">₹18–20L</div>
+        <div class="kki-when">By Month 12</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-name">Recurring Revenue %</div>
+        <div class="kpi-now">0%</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">40%+</div>
+        <div class="kpi-when">By Month 9</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-name">International Clients %</div>
+        <div class="kpi-now">0%</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">35–40%</div>
+        <div class="kpi-when">By Month 9</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-name">AMC Clients</div>
+        <div class="kpi-now">0</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">15+</div>
+        <div class="kpi-when">By Month 9</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-name">Inbound Leads / Month</div>
+        <div class="kpi-now">Platform-driven</div>
+        <div class="kpi-arrow">↓ target</div>
+        <div class="kpi-target">10+ organic</div>
+        <div class="kpi-when">By Month 6</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUMMARY ── -->
+  <section class="sec" style="padding-bottom:0">
+    <div style="background:var(--surface); border:1px solid rgba(0,200,224,0.2); border-radius:16px; padding:36px; margin-top:28px; position:relative; overflow:hidden;">
+      <div style="position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, var(--cyan), var(--green));"></div>
+      <p class="sec-eye" style="margin-bottom:12px">The Single Most Important Insight</p>
+      <h3 style="font-size:22px; font-weight:800; letter-spacing:-0.02em; line-height:1.3; margin-bottom:16px;">
+        Trishastik doesn't have a capability problem.<br>It has a <span style="color:var(--cyan)">positioning</span> and <span style="color:var(--orange)">pricing</span> problem.
+      </h3>
+      <p style="font-size:14px; color:var(--muted2); line-height:1.7; max-width:640px;">
+        The team can build full SaaS platforms. The proof is Pariksha Sarthi — a complete EdTech ecosystem
+        with React Native, React, and Go microservices. That project, pitched to a US EdTech founder on LinkedIn,
+        is a $15,000–$30,000 contract. Right now it's being priced at ₹30K.
+        <br><br>
+        The market is there. The talent is there. The product is there.
+        The strategy is what needed to change — and now it has.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <p>Analysis based on live market data · India SaaS, Healthcare IT, MSME Digitization reports · August 2026</p>
+    <div class="footer-brand">TRISHASTIK TECHNOLOGY · GROWTH ANALYSIS 2026</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
